@@ -10,9 +10,19 @@ namespace _3.SemConsol
     {
         public int DoorID { get; set; }
 
+        public Door()
+        {
+            
+        }
+
         public Door(int doorId)
         {
             DoorID = doorId;
+        }
+
+        public override string ToString()
+        {
+            return $"DoorID: {DoorID}";
         }
     }
 }

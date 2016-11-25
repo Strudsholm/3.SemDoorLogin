@@ -14,5 +14,15 @@ namespace _3.SemConsol
         {
             CardID = cardId;
         }
+
+        public Card()
+        {
+            
+        }
+
+        public override string ToString()
+        {
+            return $"CardID: {CardID}";
+        }
     }
 }
