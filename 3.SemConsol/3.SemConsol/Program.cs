@@ -17,6 +17,7 @@ namespace _3.SemConsol
                List<Door> doors = DBMapper.ListOfDoors();
 
                List<Access> accesses = DBMapper.ListOfAccess();
+            List<AccessLog> accessLogs = DBMapper.
             
 
 
@@ -55,6 +56,7 @@ namespace _3.SemConsol
                     if (Granted)
                     {
                         Console.WriteLine("Access Granted");
+                        
                     }
                     else
                     {
