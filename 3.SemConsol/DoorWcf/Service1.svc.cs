@@ -12,22 +12,35 @@ namespace DoorWcf
     // NOTE: In order to launch WCF Test Client for testing this service, please select Service1.svc or Service1.svc.cs at the Solution Explorer and start debugging.
     public class Service1 : IService1
     {
-        public string GetData(int value)
+
+        public void AddCard(Card composite)
         {
-            return string.Format("You entered: {0}", value);
+            DataHelper.addCard(composite);
         }
 
-        public CompositeType GetDataUsingDataContract(CompositeType composite)
+        public void AddDoor(Door composite)
         {
-            if (composite == null)
-            {
-                throw new ArgumentNullException("composite");
-            }
-            if (composite.BoolValue)
-            {
-                composite.StringValue += "Suffix";
-            }
-            return composite;
+            DataHelper.addDoor(composite);
+        }
+
+        public void EditCard(EditCard composite)
+        {
+            DataHelper.EditCard(composite);
+        }
+
+        public void EditDoor(EditDoor composite)
+        {
+            DataHelper.EditDoor(composite);
+        }
+
+        public void DeleteCard(Card composite)
+        {
+            DataHelper.DeleteCard(composite);
+        }
+
+        public void DeleteDoor(Door composite)
+        {
+            DataHelper.DeleteDoor(composite);
         }
     }
 }
