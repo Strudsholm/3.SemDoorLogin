@@ -42,5 +42,45 @@ namespace DoorWcf
         {
             DataHelper.DeleteDoor(composite);
         }
+
+        public void AddDoorAccess(DoorAccess composite)
+        {
+            DataHelper.AddDoorAccess(composite);
+        }
+
+        public void DeleteDoorAccess(DoorAccess composite)
+        {
+            DataHelper.DeleteDoorAccess(composite);
+        }
+
+        public List<Card> GetCards()
+        {
+            return DataHelper.Cards();
+        }
+
+        public List<Door> GetDoors()
+        {
+            return DataHelper.Doors();
+        }
+
+        public List<DoorAccess> AccessList()
+        {
+            return DataHelper.AccessList();
+        }
+
+        public List<AccessLog> LogList()
+        {
+            return DataHelper.LogList();
+        }
+
+        public List<AccessLog> LogListOnCardId(string CardID)
+        {
+            return DataHelper.LogListOnCardId(CardID);
+        }
+
+        public List<AccessLog> LogListOnDoorId(string DoorID)
+        {
+            return DataHelper.LogListOnDoorId(DoorID);
+        }
     }
 }

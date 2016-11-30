@@ -72,17 +72,17 @@ namespace _3.SemConsol
             }
         }
 
-        private static void AccessLogs(Access h)
-        {
-            using (SqlConnection connection = new SqlConnection(connectionstring))
-            {
-                SqlCommand cmd = new SqlCommand("INSERT INTO DATA (LogID, DoorID, CardID, Access, TimeDate) VALUES (@LogID, @DoorID, @CardID, @Access, @TimeDate)");
-                cmd.CommandType = CommandType.Text;
-                cmd.Connection = connection;
-                cmd.Parameters.AddWithValue("@DoorID", Door)
+        //private static void AccessLogs(Access h)
+        //{
+        //    using (SqlConnection connection = new SqlConnection(connectionstring))
+        //    {
+        //        SqlCommand cmd = new SqlCommand("INSERT INTO DATA (LogID, DoorID, CardID, Access, TimeDate) VALUES (@LogID, @DoorID, @CardID, @Access, @TimeDate)");
+        //        cmd.CommandType = CommandType.Text;
+        //        cmd.Connection = connection;
+        //        cmd.Parameters.AddWithValue("@DoorID", Door)
 
 
-            }   
-        }
+        //    }   
+        //}
     }
 }

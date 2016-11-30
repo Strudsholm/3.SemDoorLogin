@@ -30,6 +30,30 @@ namespace DoorWcf
         [OperationContract]
         void DeleteDoor(Door composite);
 
+        [OperationContract]
+        void AddDoorAccess(DoorAccess composite);
+
+        [OperationContract]
+        void DeleteDoorAccess(DoorAccess composite);
+
+        [OperationContract]
+        List<Card> GetCards();
+
+        [OperationContract]
+        List<Door> GetDoors();
+
+        [OperationContract]
+        List<DoorAccess> AccessList();
+
+        [OperationContract]
+        List<AccessLog> LogList();
+
+        [OperationContract]
+        List<AccessLog> LogListOnCardId(string CardID);
+
+        [OperationContract]
+        List<AccessLog> LogListOnDoorId(string DoorID);
+
         // TODO: Add your service operations here
     }
 
@@ -137,6 +161,63 @@ namespace DoorWcf
         {
             get { return _newDoornr; }
             set { _newDoornr = value; }
+        }
+    }
+
+    [DataContract]
+    public class DoorAccess
+    {
+        private int _doorId;
+        private string _cardId;
+
+        [DataMember]
+        public int DoorId
+        {
+            get { return _doorId; }
+            set { _doorId = value; }
+        }
+        [DataMember]
+        public string CardId
+        {
+            get { return _cardId; }
+            set { _cardId = value; }
+        }
+    }
+
+    [DataContract]
+    public class AccessLog
+    {
+        private int _doorId;
+        private string _cardId;
+        private string _dateTime;
+        private string _access;
+
+        [DataMember]
+        public int DoorId
+        {
+            get { return _doorId; }
+            set { _doorId = value; }
+        }
+
+        [DataMember]
+        public string CardId
+        {
+            get { return _cardId; }
+            set { _cardId = value; }
+        }
+
+        [DataMember]
+        public string DateTime
+        {
+            get { return _dateTime; }
+            set { _dateTime = value; }
+        }
+
+        [DataMember]
+        public string Access
+        {
+            get { return _access; }
+            set { _access = value; }
         }
     }
 }
